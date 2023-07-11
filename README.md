@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Lesson 3 : generate project with 
+ng new appname –style=scss –skip-tests=true
+Lesson 4 : generate component with 
+ ng generate component cefa-snap
+ and add the new component <app-face-snap></app-face-snap> into the main component <app-root></app-root>
