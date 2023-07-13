@@ -1,1 +1,10 @@
-<p>cefa-snap works!</p>
+<div class="face-snap-card">
+    <h2>{{title}}</h2>
+    <p>mise en ligne le {{createdDate}}</p>
+    <!--
+    <img src="{{imageUrl}}" title="{{title}}"> ou<br/>
+    -->
+    <img [src]="imageUrl" [title]="title">
+    <p>{{description}}</p>
+    <p>Nb snaps {{snaps}}</p>
+</div>

@@ -31,3 +31,4 @@ ng new appname –style=scss –skip-tests=true
 Lesson 4 : generate component with 
  ng generate component cefa-snap
  and add the new component <app-face-snap></app-face-snap> into the main component <app-root></app-root>
+Lesson 5 
