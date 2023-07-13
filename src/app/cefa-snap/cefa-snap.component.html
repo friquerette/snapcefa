@@ -6,5 +6,8 @@
     -->
     <img [src]="imageUrl" [title]="title">
     <p>{{description}}</p>
-    <p>Nb snaps {{snaps}}</p>
+    <p>
+        <button (click)="onAddSnap()">{{this.buttonText}}</button>
+        Nb snaps {{snaps}}
+    </p>
 </div>
