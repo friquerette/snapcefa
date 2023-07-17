@@ -3,6 +3,7 @@
     <p>mise en ligne le {{ cefaSnap.createdDate }}</p>
     <img [src]="cefaSnap.imageUrl" [title]="cefaSnap.title">
     <p>{{cefaSnap.description}}</p>
+    <p *ngIf="cefaSnap.location">Photo prise à {{ cefaSnap.location }}</p>
     <p>
         <button (click)="onAddSnap()">{{this.buttonText}}</button>
         Nb snaps {{cefaSnap.snaps}}
