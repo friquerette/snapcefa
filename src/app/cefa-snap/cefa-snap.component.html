@@ -1,13 +1,10 @@
 <div class="face-snap-card">
-    <h2>{{title}}</h2>
-    <p>mise en ligne le {{createdDate}}</p>
-    <!--
-    <img src="{{imageUrl}}" title="{{title}}"> ou<br/>
-    -->
-    <img [src]="imageUrl" [title]="title">
-    <p>{{description}}</p>
+    <h2>{{ cefaSnap.title }}</h2>
+    <p>mise en ligne le {{ cefaSnap.createdDate }}</p>
+    <img [src]="cefaSnap.imageUrl" [title]="cefaSnap.title">
+    <p>{{cefaSnap.description}}</p>
     <p>
         <button (click)="onAddSnap()">{{this.buttonText}}</button>
-        Nb snaps {{snaps}}
+        Nb snaps {{cefaSnap.snaps}}
     </p>
 </div>
