@@ -15,14 +15,14 @@ export class AppComponent implements OnInit {
         title: 'The Face V1',
         description: 'description of one face',
         createdDate: new Date(),
-        snaps: 6, 
+        snaps: 255, 
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Chiltern_bears_Chesham_Museum.jpg/440px-Chiltern_bears_Chesham_Museum.jpg'
       },
       {
         title: 'The Face Kitchen',
         description: 'description of one face kitchen',
         createdDate: new Date(),
-        snaps: 5, 
+        snaps: 140, 
         imageUrl: 'https://hips.hearstapps.com/hmg-prod/images/hbx080122kitchens-carenrideau-004-preview-1658766179.jpg?crop=0.840xw:0.931xh;0,0&resize=1200:*',
         location: 'kitchen'
       },

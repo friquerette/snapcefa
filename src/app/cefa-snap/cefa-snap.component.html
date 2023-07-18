@@ -6,6 +6,6 @@
     <p *ngIf="cefaSnap.location">Photo prise à {{ cefaSnap.location }}</p>
     <p>
         <button (click)="onAddSnap()">{{this.buttonText}}</button>
-        Nb snaps {{cefaSnap.snaps}}
+        <span [ngStyle]="{color: 'rgb(0, ' + cefaSnap.snaps + ', 0)'}">🍌snaps {{cefaSnap.snaps}}</span>
     </p>
 </div>
