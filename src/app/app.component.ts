@@ -7,25 +7,35 @@ import { CefaSnap } from './models/cefa-snap-model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  mySnap!: CefaSnap;
-  mySnap2!: CefaSnap;
+  cefaSnaps!: CefaSnap[];
 
   ngOnInit(): void {
-    this.mySnap = {
-      title: 'The Face',
-      description: 'description of one face',
-      createdDate: new Date(),
-      snaps: 6, 
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Chiltern_bears_Chesham_Museum.jpg/440px-Chiltern_bears_Chesham_Museum.jpg',
-      location: 'Paris'
-    };
-    this.mySnap2 = {
-      title: 'The Face V2',
-      description: 'description of one face',
-      createdDate: new Date(),
-      snaps: 5, 
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTBR79kQFmwlwitL9ur707Ino4D4RkH_DiyvOjUhGh&shiltern_bears_Chesham_Museum.jpg'
-    };
+    this.cefaSnaps = [
+      {
+        title: 'The Face V1',
+        description: 'description of one face',
+        createdDate: new Date(),
+        snaps: 6, 
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Chiltern_bears_Chesham_Museum.jpg/440px-Chiltern_bears_Chesham_Museum.jpg'
+      },
+      {
+        title: 'The Face Kitchen',
+        description: 'description of one face kitchen',
+        createdDate: new Date(),
+        snaps: 5, 
+        imageUrl: 'https://hips.hearstapps.com/hmg-prod/images/hbx080122kitchens-carenrideau-004-preview-1658766179.jpg?crop=0.840xw:0.931xh;0,0&resize=1200:*',
+        location: 'kitchen'
+      },
+      {
+        title: 'The Face Paris',
+        description: 'description of one face panam',
+        createdDate: new Date(),
+        snaps: 27, 
+        imageUrl: 'https://www.okvoyage.com/wp-content/uploads/2020/01/paris-2-810x403.jpg',
+        location: 'Paris'
+      }
+    ]
+
   }
 }
     
