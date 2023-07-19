@@ -1,6 +1,6 @@
 <div class="face-snap-card" [ngClass]="{snapped: !addSnap}">
     <h2>{{ cefaSnap.title | uppercase }}</h2>
-    <p>mise en ligne le {{ cefaSnap.createdDate }}</p>
+    <p>mise en ligne {{ cefaSnap.createdDate | date: 'longDate' }} or {{ cefaSnap.createdDate | date: 'le dd/MM/yyyy à hh:mm' }}</p>
     <img [src]="cefaSnap.imageUrl" [title]="cefaSnap.title">
     <p>{{cefaSnap.description | titlecase }}</p>
     <p *ngIf="cefaSnap.location">Photo prise à {{ cefaSnap.location | lowercase }}</p>
