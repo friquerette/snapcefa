@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
         description: 'description of one face panam',
         createdDate: new Date(),
         snaps: 27, 
-        imageUrl: 'https://www.okvoyage.com/wp-content/uploads/2020/01/paris-2-810x403.jpg',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Paris_by_night_%283438983077%29.jpg/1024px-Paris_by_night_%283438983077%29.jpg',
         location: 'Paris'
       }
     ]
