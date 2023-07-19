@@ -1,4 +1,4 @@
-<div class="face-snap-card">
+<div class="face-snap-card" [ngClass]="{snapped: !addSnap}">
     <h2>{{ cefaSnap.title }}</h2>
     <p>mise en ligne le {{ cefaSnap.createdDate }}</p>
     <img [src]="cefaSnap.imageUrl" [title]="cefaSnap.title">
