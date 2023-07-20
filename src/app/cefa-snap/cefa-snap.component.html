@@ -8,4 +8,19 @@
         <button (click)="onAddSnap()">{{this.buttonText}}</button>
         <span [ngStyle]="{color: 'rgb(0, ' + cefaSnap.snaps + ', 0)'}">🍌snaps {{cefaSnap.snaps}}</span>
     </p>
+    <p>
+        <strong>the decimal pipe</strong>
+        <br>{{ 123456.789 | number: '1.0-2' }}
+        <br>'1.0-2' min one decimal before point
+        <br>and min 0 digit after the point 
+        <br>and maximum 2 number after the point)
+    </p>
+    <p>
+        <strong>percent: the percent pipe</strong>
+        <br>{{ 0.3367 | percent: '3.0-2'}}
+    </p>
+    <p>
+        <strong>currency: the currency pipe</strong>
+        <br>{{ 344.366 | currency: 'EUR' : 'symbol' : '5.0-2'}}
+    </p>
 </div>
