@@ -5,11 +5,15 @@ import * as fr from '@angular/common/locales/fr';
 
 import { AppComponent } from './app.component';
 import { CefaSnapComponent } from './cefa-snap/cefa-snap.component';
+import { CefaSnapListComponent } from './cefa-snap-list/cefa-snap-list.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CefaSnapComponent
+    CefaSnapComponent,
+    CefaSnapListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule
