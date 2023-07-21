@@ -1,4 +1,5 @@
 export class CefaSnap {
+    id!: number;
     title!: string;
     description!: string;
     createdDate!: Date;

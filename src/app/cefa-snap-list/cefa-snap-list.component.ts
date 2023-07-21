@@ -13,6 +13,6 @@ export class CefaSnapListComponent implements OnInit {
   constructor(private cefaSnapsService: CefaSnapsService) { }
 
   ngOnInit(): void {
-    this.cefaSnaps = this.cefaSnapsService.cefaSnaps;
+    this.cefaSnaps = this.cefaSnapsService.getAllCefaSnaps();
   }
 }

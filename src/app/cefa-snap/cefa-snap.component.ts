@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CefaSnap } from '../models/cefa-snap-model';
+import { CefaSnapsService } from '../services/cefa-snaps.service';
 
 @Component({
   selector: 'app-cefa-snap',
@@ -12,13 +13,21 @@ export class CefaSnapComponent implements OnInit {
   addSnap!: boolean;
   buttonText!: string;
 
+  constructor(private cefaSnapsService : CefaSnapsService) {
+    
+  }
+
   ngOnInit() {
     this.addSnap = true;
     this.buttonText = 'Oh Snap!';
   }
   
   onAddSnap() {
-    this.cefaSnap.snaps = this.addSnap ? this.cefaSnap.snaps+1 : this.cefaSnap.snaps-1;
+    if (this.addSnap) {
+      this.cefaSnapsService.snapCefaById(this.cefaSnap.id);
+    } else {
+      this.cefaSnapsService.unSnapCefaById(this.cefaSnap.id);
+    }
     this.buttonText = this.addSnap ? 'Oups Unsnap!' : 'Oh Snap!';
     this.addSnap = !this.addSnap;
   }
