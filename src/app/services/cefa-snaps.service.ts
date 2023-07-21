@@ -47,14 +47,9 @@ export class CefaSnapsService {
         }
         return cefaSnap;
       };
-
-      snapCefaById(id: number): void {
+ 
+      snapCefaById(id: number, snapType: 'snap' | 'unsnap'): void {
         const cefaSnap = this.getFaceSnapById(id);
-        cefaSnap.snaps++;
-      }
-
-      unSnapCefaById(id: number): void {
-        const cefaSnap = this.getFaceSnapById(id);
-        cefaSnap.snaps--;
-      }
+        snapType === 'snap' ? cefaSnap.snaps++ : cefaSnap.snaps--;
+      };
 }

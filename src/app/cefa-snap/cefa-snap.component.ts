@@ -23,10 +23,10 @@ export class CefaSnapComponent implements OnInit {
   }
   
   onAddSnap() {
-    if (this.addSnap) {
-      this.cefaSnapsService.snapCefaById(this.cefaSnap.id);
+    if  (this.addSnap) {
+      this.cefaSnapsService.snapCefaById(this.cefaSnap.id, 'snap');
     } else {
-      this.cefaSnapsService.unSnapCefaById(this.cefaSnap.id);
+      this.cefaSnapsService.snapCefaById(this.cefaSnap.id, 'unsnap');
     }
     this.buttonText = this.addSnap ? 'Oups Unsnap!' : 'Oh Snap!';
     this.addSnap = !this.addSnap;
