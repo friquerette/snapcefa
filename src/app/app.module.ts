@@ -7,16 +7,20 @@ import { AppComponent } from './app.component';
 import { CefaSnapComponent } from './cefa-snap/cefa-snap.component';
 import { CefaSnapListComponent } from './cefa-snap-list/cefa-snap-list.component';
 import { HeaderComponent } from './header/header.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CefaSnapComponent,
     CefaSnapListComponent,
-    HeaderComponent
+    HeaderComponent,
+    LandingPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'fr_FR'}
