@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { CefaSnap } from '../models/cefa-snap-model';
 import { CefaSnapsService } from '../services/cefa-snaps.service';
 
@@ -13,7 +14,7 @@ export class CefaSnapComponent implements OnInit {
   addSnap!: boolean;
   buttonText!: string;
 
-  constructor(private cefaSnapsService : CefaSnapsService) {
+  constructor(private router: Router, private cefaSnapsService : CefaSnapsService) {
     
   }
 
@@ -23,12 +24,16 @@ export class CefaSnapComponent implements OnInit {
   }
   
   onAddSnap() {
-    if  (this.addSnap) {
+    if (this.addSnap) {
       this.cefaSnapsService.snapCefaById(this.cefaSnap.id, 'snap');
     } else {
       this.cefaSnapsService.snapCefaById(this.cefaSnap.id, 'unsnap');
     }
     this.buttonText = this.addSnap ? 'Oups Unsnap!' : 'Oh Snap!';
     this.addSnap = !this.addSnap;
+  }
+
+  onDisplayCefa(id: number): void {
+    this.router.navigateByUrl(`cefasnaps/${this.cefaSnap.id}`);
   }
 }
