@@ -11,3 +11,6 @@ several technicals to handle asynchrone in javascript:
    . promise with then() and catch()
    . function async/await, function which wait until the event appear
 Angular provide a tool more powerful to handle it with the tools RxJS with its Observables
+
+lesson 1
+   a) use of intervable() (an obsersable) with subscriber
