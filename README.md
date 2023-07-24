@@ -24,3 +24,10 @@ lesson 2\
       . map() is use to transforme the value,\
       . filter() to filter the emit value,\
       . tap() a side effect to send a value outside without modifying this value.\
+\
+lesson 3\
+   operator of high level on the emit value, allow to subscribe to other Obersvable\
+      . mergeMap() for paralleling stream\
+      . concatMap() do one stream at once without ending if interrupt before the end\
+      . exhaustMap() do a full stream before starting the next one, and ignore the ask when processing\
+      . switch() do the last stream asked and interrupted it if there is a new ask\
