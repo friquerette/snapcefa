@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CefaSnap } from '../models/cefa-snap-model';
 import { CefaSnapsService } from '../services/cefa-snaps.service';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-cefa-snap',
@@ -16,12 +17,12 @@ export class CefaSnapComponent implements OnInit {
 
   constructor(private router: Router, private cefaSnapsService : CefaSnapsService) {
     
-  }
+  };
 
   ngOnInit() {
     this.addSnap = true;
     this.buttonText = 'Oh Snap!';
-  }
+  };
   
   onAddSnap() {
     if (this.addSnap) {
@@ -35,5 +36,5 @@ export class CefaSnapComponent implements OnInit {
 
   onDisplayCefa(id: number): void {
     this.router.navigateByUrl(`cefasnaps/${this.cefaSnap.id}`);
-  }
+  };
 }

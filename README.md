@@ -17,3 +17,10 @@ lesson 1\
    b) declare the interval$ as observable which emit number and display the result into the template
       use the pipe Async which subscribe to the obsersable and dont format the data.
       Avoid to use the method subscribe() which is prohibated\
+\
+lesson 2\
+   a) manipulate the emit value with operator of low level:\
+      . pipe() allow to apply the operation on the at an Oberservable,\
+      . map() is use to transforme the value,\
+      . filter() to filter the emit value,\
+      . tap() a side effect to send a value outside without modifying this value.\
