@@ -31,3 +31,8 @@ lesson 3\
       . concatMap() do one stream at once without ending if interrupt before the end\
       . exhaustMap() do a full stream before starting the next one, and ignore the ask when processing\
       . switch() do the last stream asked and interrupted it if there is a new ask\
+\
+lesson 4\
+   Handle memory leak (fuite de mémoire)\
+   subscribe() each time that a obervable is subscribe its life continue when the composant is unload, and a second is load when the component is load a second time\
+   take(x) complete when the number of emit is reach, here x\

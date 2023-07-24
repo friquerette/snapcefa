@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     // __________________________
     // * operator of high level *
     // mergeMap/concatMap/exhaustMap/switchMap
-    this.startHighLevel()
+    // this.startHighLevel()
   };
 
   // ______________________________________________________________
