@@ -34,5 +34,9 @@ lesson 3\
 \
 lesson 4\
    Handle memory leak (fuite de mémoire)\
-   subscribe() each time that a obervable is subscribe its life continue when the composant is unload, and a second is load when the component is load a second time\
-   take(x) complete when the number of emit is reach, here x\
+      . subscribe() each time that a obervable is subscribe its life continue when the composant is unload, and a second is load when the component is load a second time\
+      . take(x) complete when the number of emit is reach, here x\
+      . takeUntil(): pattern Destroy Subject with a subject which is called when the component is unload by OnDestroy\
+      . async pipe (in the template html): any Observable subscribe with the pipe async is automatically destroy when the component is unloaded\
+\
+For rxjs, ressoure https://www.learnrxjs.io\
