@@ -40,3 +40,18 @@ lesson 4\
       . async pipe (in the template html): any Observable subscribe with the pipe async is automatically destroy when the component is unloaded\
 \
 For rxjs, ressoure https://www.learnrxjs.io\
+\
+Part 2: The forms\
+lesson 5\
+Allow the use to do input from the form\
+   . import the module FormsModule from @angular/forms inside the AppModule\
+   . add a <form> into the template\
+   . add an attribut into the controller\
+   . map it to the template with the two-way binding [] \
+      . [] the attribut binding to display the data into the form \
+      . () the event binding to send the data to the controller \
+   . ngSubmit: the event which receiv the click of a submit of the form \
+   . <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">\
+      . ngForm here is a directive coming from FormsModule imported into the AppModule and put on all balise <form>\
+      . onSubmitForm() can receiv emailForm from it in argurment which is send to the method\
+      . #emailForm is a reference local to the directive that we dont need to put and which is given to the directive\

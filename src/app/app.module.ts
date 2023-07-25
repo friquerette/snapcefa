@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleCefaSnapComponent } from './single-cefa-snap/single-cefa-snap.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SingleCefaSnapComponent } from './single-cefa-snap/single-cefa-snap.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'fr_FR'}
