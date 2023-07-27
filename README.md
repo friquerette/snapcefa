@@ -55,3 +55,12 @@ Allow the use to do input from the form\
       . ngForm here is a directive coming from FormsModule imported into the AppModule and put on all balise <form>\
       . onSubmitForm() can receiv emailForm from it in argurment which is send to the method\
       . #emailForm is a reference local to the directive that we dont need to put and which is given to the directive\
+\
+Lesson 6\
+The form reactive\
+The form reactive is generate by TypeScript\
+For this use the module ReactiveFormsModule.\
+Use the FormBuiler to use generate an object of type FormGroup\
+Reactive means Observable\
+use of the Observable "valueChanges()" on the form with the directive "async" in the template and an alias declare with "as"
+... operateur Spread\

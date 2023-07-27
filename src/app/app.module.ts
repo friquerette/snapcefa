@@ -10,7 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleCefaSnapComponent } from './single-cefa-snap/single-cefa-snap.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NewCefaSnapComponent } from './new-cefa-snap/new-cefa-snap.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,14 @@ import { FormsModule } from '@angular/forms';
     CefaSnapListComponent,
     SingleCefaSnapComponent,
     HeaderComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    NewCefaSnapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'fr_FR'}
