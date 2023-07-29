@@ -64,3 +64,9 @@ Use the FormBuiler to use generate an object of type FormGroup\
 Reactive means Observable\
 use of the Observable "valueChanges()" on the form with the directive "async" in the template and an alias declare with "as"
 ... operateur Spread\
+\
+Lesson 7\
+Validator is use with form reactive\
+   . at the this.formBuilder.group() add a validator "Validators.required"\
+   . add validator by pattern for url with "Validators.pattern(this.urlRegex)"\
+   . make the emis number of emit event (less refresh) of this.formBuilder.group by using "updateOn: 'blur'"

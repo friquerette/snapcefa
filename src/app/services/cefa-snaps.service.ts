@@ -52,4 +52,14 @@ export class CefaSnapsService {
         const cefaSnap = this.getFaceSnapById(id);
         snapType === 'snap' ? cefaSnap.snaps++ : cefaSnap.snaps--;
       };
+
+      addCefaSnap(formValue: {title: string, description: string, imageUrl: string, location?: string}): void {
+        const cefaSnap: CefaSnap = {
+          ...formValue,
+          createdDate: new Date(),
+          snaps:0,
+          id: this.cefaSnaps[this.cefaSnaps.length - 1].id + 1
+        };
+        this.cefaSnaps.push(cefaSnap);
+      };
 }
