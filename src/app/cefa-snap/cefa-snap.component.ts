@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CefaSnap } from '../models/cefa-snap-model';
 import { CefaSnapsService } from '../services/cefa-snaps.service';
-import { interval } from 'rxjs';
+import { interval, tap } from 'rxjs';
 
 @Component({
   selector: 'app-cefa-snap',
@@ -26,9 +26,9 @@ export class CefaSnapComponent implements OnInit {
   
   onAddSnap() {
     if (this.addSnap) {
-      this.cefaSnapsService.snapCefaById(this.cefaSnap.id, 'snap');
+      this.cefaSnapsService.snapCefaSnapById(this.cefaSnap.id, 'snap');
     } else {
-      this.cefaSnapsService.snapCefaById(this.cefaSnap.id, 'unsnap');
+      this.cefaSnapsService.snapCefaSnapById(this.cefaSnap.id, 'unsnap');
     }
     this.buttonText = this.addSnap ? 'Oups Unsnap!' : 'Oh Snap!';
     this.addSnap = !this.addSnap;

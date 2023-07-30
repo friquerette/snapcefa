@@ -72,6 +72,12 @@ Validator is use with form reactive\
    . make the emis number of emit event (less refresh) of this.formBuilder.group by using "updateOn: 'blur'"
 \
 Lesson 8\
-Use of the HttpClient from "@angular/common/http" with the method this.http.get<CefaSnap[]>.\
+Use of the HttpClient from "@angular/common/http" with the method this.http.get<CefaSnap[]>('url').\
 Resolv of the return Obersable by the pipe "async" use into the template of the list of CefaSnap\
+. url of the project for the "back server" https://github.com/OpenClassrooms-Student-Center/angular-intermediate-backend\
+\
+Lesson 9\
+clean the code\
+Be able to read only one CefaSnap from the back by Id with this.http.get<CefaSnap[]>(`url{id}`)\
+Be able refresh the number of snap (like) on the back with this.http.put<CefaSnap[]>(`url`, updatedCefaSnap)\
 \

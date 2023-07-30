@@ -6,7 +6,7 @@
     <p>{{cefaSnap.description | titlecase }}</p>
     <p *ngIf="cefaSnap.location">Photo prise à {{ cefaSnap.location | lowercase }}</p>
     <p>
-        <button (click)="onAddSnap()">{{this.buttonText}}</button>
+        <button (click)="onAddSnap(cefaSnap.id)">{{this.buttonText}}</button>
         <span [ngStyle]="{color: 'rgb(0, ' + cefaSnap.snaps + ', 0)'}">🍌snaps {{cefaSnap.snaps}}</span>
     </p>
     <p>

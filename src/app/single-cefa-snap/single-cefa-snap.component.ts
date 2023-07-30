@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { CefaSnap } from '../models/cefa-snap-model';
 import { CefaSnapsService } from '../services/cefa-snaps.service';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-single-cefa-snap',
@@ -10,31 +10,29 @@ import { Observable } from 'rxjs';
   styleUrls: ['./single-cefa-snap.component.scss']
 })
 export class SingleCefaSnapComponent implements OnInit {
-  cefaSnap!: CefaSnap;
-  cefaSnap$!: Observable<CefaSnap>;
 
+  cefaSnap$!: Observable<CefaSnap>;
   addSnap!: boolean;
   buttonText!: string;
 
-  constructor(private cefaSnapsService : CefaSnapsService, private route: ActivatedRoute) {
-    
-  }
+  constructor(private cefaSnapsService : CefaSnapsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.addSnap = true;
     this.buttonText = 'Oh Snap!';
     const cefaSnapId = +this.route.snapshot.params['id'];
-    this.cefaSnap$ = this.cefaSnapsService.getFaceSnapNewHttpById(cefaSnapId);
+    this.cefaSnap$ = this.cefaSnapsService.getFaceSnapById(cefaSnapId);
   }
   
-  onAddSnap() {
-    if  (this.addSnap) {
-      this.cefaSnapsService.snapCefaById(this.cefaSnap.id, 'snap');
-    } else {
-      this.cefaSnapsService.snapCefaById(this.cefaSnap.id, 'unsnap');
-    }
-    this.buttonText = this.addSnap ? 'Oups Unsnap!' : 'Oh Snap!';
-    this.addSnap = !this.addSnap;
-  }
+  onAddSnap(cefaSnapId: number) {
+    // snapCefaSnapById() update the attribut "addSnap" (the counter) annd return an Obversable with the refresh object 
+    this.cefaSnap$ = this.cefaSnapsService.snapCefaSnapById(cefaSnapId, this.addSnap ? 'snap' : 'unsnap' ).pipe(
+      // tap() the side effect allow to do the following action when the Obersable emit (finis his action)
+      tap(() => {
+        this.buttonText = this.addSnap ? 'Oups Unsnap!' : 'Oh Snap!';
+        this.addSnap = !this.addSnap;
+      })
+    );
+  };
 
 }

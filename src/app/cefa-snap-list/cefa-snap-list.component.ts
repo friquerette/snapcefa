@@ -19,11 +19,7 @@ export class CefaSnapListComponent implements OnInit, OnDestroy {
   constructor(private cefaSnapsService: CefaSnapsService) { }
 
   ngOnInit(): void {
-    
-    // old method to read the data from the service
-    // this.cefaSnaps = this.cefaSnapsService.getAllCefaSnaps();
-    // new method to read the data from the external server
-    this.cefaSnaps$ = this.cefaSnapsService.getAllCefaSnapsNewHttp();
+    this.cefaSnaps$ = this.cefaSnapsService.getAllCefaSnaps();
 
     // Terminate the Observable with take()
     // this.startForTake();
