@@ -80,4 +80,6 @@ Lesson 9\
 clean the code\
 Be able to read only one CefaSnap from the back by Id with this.http.get<CefaSnap[]>(`url{id}`)\
 Be able refresh the number of snap (like) on the back with this.http.put<CefaSnap[]>(`url`, updatedCefaSnap)\
+use the side effect method tap() to do the action when the call of the server is finish\
+Be able to create a new recort on the back server with this.http.post<CefaSnap[]>(`url`, newCefaSnap)\
 \

@@ -18,14 +18,21 @@ export class CefaSnapsService {
            return this.http.get<CefaSnap>(`http://localhost:3000/facesnaps/${id}`);
       };
 
-      addCefaSnap(formValue: {title: string, description: string, imageUrl: string, location?: string}): void {
-        // const cefaSnap: CefaSnap = {
-        //   ...formValue,
-        //   createdDate: new Date(),
-        //   snaps:0,
-        //   id: this.cefaSnaps[this.cefaSnaps.length - 1].id + 1
-        // };
-        // this.cefaSnaps.push(cefaSnap);
+      addCefaSnap(formValue: {title: string, description: string, imageUrl: string, location?: string}): Observable<CefaSnap> {
+       return this.getAllCefaSnaps().pipe(
+        // Need to sort the face to get the biggest id, but facesnaps cant be sort because immuable (because from an Observable) so clone it with ...facesnaps
+        map(cefasnaps => [...cefasnaps].sort((a, b) => a.id - b.id)),
+        // Find the last sortedCefasnap (with the biggest ID)
+        map(sortedCefasnap => sortedCefasnap[sortedCefasnap.length-1]),
+        // Build the new object and put the "ID number + 1"
+        map(previousCefasnap => ({
+          ...formValue,
+          snaps: 0,
+          createdDate: new Date(),
+          id: previousCefasnap.id + 1
+        })),
+        switchMap(newCefaSnap => this.http.post<CefaSnap>('http://localhost:3000/facesnaps', newCefaSnap))
+       );
       };
 
       snapCefaSnapById(id: number, snapType: 'snap' | 'unsnap'): Observable<CefaSnap> {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Observable, pipe, map } from 'rxjs';
+import { Observable, pipe, map, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { CefaSnap } from '../models/cefa-snap-model';
 import { CefaSnapsService } from '../services/cefa-snaps.service';
@@ -44,9 +44,11 @@ export class NewCefaSnapComponent implements OnInit {
   }
 
   onSubmitForm(): void {
-    // console.log(this.snapForm.value);
-    this.cefaSnapsService.addCefaSnap(this.snapForm.value);
-    this.router.navigateByUrl('cefasnaps');
+    this.cefaSnapsService.addCefaSnap(this.snapForm.value).pipe(
+      tap(() => this.router.navigateByUrl('cefasnaps'))
+    )
+    // we can use subscribe() here wihtout memory leak because this observable will emit only once and finish
+    .subscribe();
   };
 
 }
