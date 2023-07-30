@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CefaSnap } from '../models/cefa-snap-model';
 import { CefaSnapsService } from '../services/cefa-snaps.service';
-import { Subject, interval, take, takeUntil, tap } from 'rxjs';
+import { Observable, Subject, interval, take, takeUntil, tap } from 'rxjs';
 
 @Component({
   selector: 'app-cefa-snap-list',
@@ -9,14 +9,22 @@ import { Subject, interval, take, takeUntil, tap } from 'rxjs';
   styleUrls: ['./cefa-snap-list.component.scss']
 })
 export class CefaSnapListComponent implements OnInit, OnDestroy {
+  
   cefaSnaps!: CefaSnap[];
+  // cefaSnaps$ with a $ because contains an Observ able
+  cefaSnaps$!: Observable<CefaSnap[]>;
+
   private destroy$!: Subject<boolean>; 
 
   constructor(private cefaSnapsService: CefaSnapsService) { }
 
   ngOnInit(): void {
+    
+    // old method to read the data from the service
+    // this.cefaSnaps = this.cefaSnapsService.getAllCefaSnaps();
+    // new method to read the data from the external server
+    this.cefaSnaps$ = this.cefaSnapsService.getAllCefaSnapsNewHttp();
 
-    this.cefaSnaps = this.cefaSnapsService.getAllCefaSnaps();
     // Terminate the Observable with take()
     // this.startForTake();
 
