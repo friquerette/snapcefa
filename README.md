@@ -70,3 +70,8 @@ Validator is use with form reactive\
    . at the this.formBuilder.group() add a validator "Validators.required"\
    . add validator by pattern for url with "Validators.pattern(this.urlRegex)"\
    . make the emis number of emit event (less refresh) of this.formBuilder.group by using "updateOn: 'blur'"
+\
+Lesson 8\
+Use of the HttpClient from "@angular/common/http" with the method this.http.get<CefaSnap[]>.\
+Resolv of the return Obersable by the pipe "async" use into the template of the list of CefaSnap\
+\
