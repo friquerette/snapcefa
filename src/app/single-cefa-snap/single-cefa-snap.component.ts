@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { CefaSnap } from '../models/cefa-snap-model';
 import { CefaSnapsService } from '../services/cefa-snaps.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-single-cefa-snap',
@@ -10,6 +11,7 @@ import { CefaSnapsService } from '../services/cefa-snaps.service';
 })
 export class SingleCefaSnapComponent implements OnInit {
   cefaSnap!: CefaSnap;
+  cefaSnap$!: Observable<CefaSnap>;
 
   addSnap!: boolean;
   buttonText!: string;
@@ -22,7 +24,7 @@ export class SingleCefaSnapComponent implements OnInit {
     this.addSnap = true;
     this.buttonText = 'Oh Snap!';
     const cefaSnapId = +this.route.snapshot.params['id'];
-    this.cefaSnap = this.cefaSnapsService.getFaceSnapById(cefaSnapId);
+    this.cefaSnap$ = this.cefaSnapsService.getFaceSnapNewHttpById(cefaSnapId);
   }
   
   onAddSnap() {

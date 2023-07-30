@@ -21,6 +21,10 @@ export class CefaSnapsService {
         return this.cefaSnaps;
       };
 
+      getFaceSnapNewHttpById(id: number): Observable<CefaSnap> {
+           return this.http.get<CefaSnap>(`http://localhost:3000/facesnaps/${id}`);
+      };
+
       getFaceSnapById(id: number): CefaSnap {
         const cefaSnap = this.cefaSnaps.find(c => c.id === id);
         if (!cefaSnap) {
@@ -29,6 +33,11 @@ export class CefaSnapsService {
 
         }
         return cefaSnap;
+      };
+
+      snapCefaNewHttpById(id: number, snapType: 'snap' | 'unsnap'): void {
+        const cefaSnap = this.getFaceSnapById(id);
+        snapType === 'snap' ? cefaSnap.snaps++ : cefaSnap.snaps--;
       };
 
       snapCefaById(id: number, snapType: 'snap' | 'unsnap'): void {
