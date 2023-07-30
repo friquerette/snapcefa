@@ -1,1 +1,1 @@
-<app-cefa-snap *ngFor="let cefaSnap of cefaSnaps" [cefaSnap]="cefaSnap" />
+<app-cefa-snap *ngFor="let cefaSnap of cefaSnaps$ | async" [cefaSnap]="cefaSnap" />
