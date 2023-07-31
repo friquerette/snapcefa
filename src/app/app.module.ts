@@ -13,6 +13,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleCefaSnapComponent } from './single-cefa-snap/single-cefa-snap.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewCefaSnapComponent } from './new-cefa-snap/new-cefa-snap.component';
+import { httpInterceptorProviders } from './interceptors';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NewCefaSnapComponent } from './new-cefa-snap/new-cefa-snap.component';
     HttpClientModule
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: 'fr_FR'}
+    {provide: LOCALE_ID, useValue: 'fr_FR'},
+    httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

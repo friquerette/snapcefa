@@ -83,3 +83,12 @@ Be able refresh the number of snap (like) on the back with this.http.put<CefaSna
 use the side effect method tap() to do the action when the call of the server is finish\
 Be able to create a new recort on the back server with this.http.post<CefaSnap[]>(`url`, newCefaSnap)\
 \
+Lesson 10\
+Securize the query to the server\
+Use the interceptor to add a token in the header.\
+HttpInterceptor: An interceptor is a class which implement HttpInterceptor with the intercept()\
+This method intercept the HttpRequest to add the header Authorization. The HttpRequest is clone() here because immutable.\
+The response is send to the client by next.handle(cloneHttpRequest)\
+Here the token is prodived by a TokenService (a mock token here)\
+This interceptor is added to the app Module into the providers part\
+\
