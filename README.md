@@ -92,3 +92,14 @@ The response is send to the client by next.handle(cloneHttpRequest)\
 Here the token is prodived by a TokenService (a mock token here)\
 This interceptor is added to the app Module into the providers part\
 \
+Lesson 11\
+use of module\
+generate a new module core with the command ng generate module core or ng g m core\
+This module import "CommonModule" common to all module\
+We put inside this module all which is part of the application and which will be import only once in the application and not part of a feature module\
+   . modele: We import usually the modele inside this core module\
+   . service: We do the same for the service\
+   . interceptor: The interceptor are also moved inside this module, but we move also the logical of this interceptor with the provider (which is remove from appModule)\
+   . local: the local is moved in the same time into the module,
+   . header component: which is center to the application, it will be put inside a directory component\
+   . export/import: now the component header is imported inside the core module but not visible from out side it needs to be export from there\

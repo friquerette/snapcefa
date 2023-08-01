@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { CefaSnap } from '../models/cefa-snap-model';
-import { CefaSnapsService } from '../services/cefa-snaps.service';
+import { CefaSnap } from '../core/models/cefa-snap-model';
+import { CefaSnapsService } from '../core/services/cefa-snaps.service';
 import { Observable, tap } from 'rxjs';
 
 @Component({

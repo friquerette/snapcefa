@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { CefaSnap } from '../models/cefa-snap-model';
-import { CefaSnapsService } from '../services/cefa-snaps.service';
+import { CefaSnap } from '../core/models/cefa-snap-model';
+import { CefaSnapsService } from '../core/services/cefa-snaps.service';
 import { interval, tap } from 'rxjs';
 
 @Component({
