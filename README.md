@@ -104,4 +104,5 @@ We put inside this module all which is part of the application and which will be
    . header component: which is center to the application, it will be put inside a directory component\
    . export/import: now the component header is imported inside the core module but not visible from out side it needs to be export from there\
 Create the feature module CefaSnaps, all the component for CefaSnap are moved inside this new module\
+Create a landing page module\
 \
