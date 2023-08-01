@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable, pipe, map, tap } from 'rxjs';
 import { Router } from '@angular/router';
-import { CefaSnap } from '../core/models/cefa-snap-model';
-import { CefaSnapsService } from '../core/services/cefa-snaps.service';
+import { CefaSnapsService } from 'src/app/core/services/cefa-snaps.service';
+import { CefaSnap } from 'src/app/core/models/cefa-snap-model';
 
 @Component({
   selector: 'app-new-cefa-snap',

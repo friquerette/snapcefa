@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { CefaSnap } from '../core/models/cefa-snap-model';
-import { CefaSnapsService } from '../core/services/cefa-snaps.service';
 import { Observable, tap } from 'rxjs';
+import { CefaSnap } from 'src/app/core/models/cefa-snap-model';
+import { CefaSnapsService } from 'src/app/core/services/cefa-snaps.service';
 
 @Component({
   selector: 'app-single-cefa-snap',

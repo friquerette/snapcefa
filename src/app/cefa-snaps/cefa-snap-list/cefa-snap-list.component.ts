@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CefaSnap } from '../core/models/cefa-snap-model';
-import { CefaSnapsService } from '../core/services/cefa-snaps.service';
+import { CefaSnap } from '../../core/models/cefa-snap-model';
+import { CefaSnapsService } from '../../core/services/cefa-snaps.service';
 import { Observable, Subject, interval, take, takeUntil, tap } from 'rxjs';
 
 @Component({
