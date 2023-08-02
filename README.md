@@ -106,3 +106,12 @@ We put inside this module all which is part of the application and which will be
 Create the feature module CefaSnaps, all the component for CefaSnap are moved inside this new module\
 Create a landing page module\
 \
+Lesson 12\
+Lazy loading, routing technical depend on the architecture in module. The module will be loaded when the user will need of it\
+The CefaSnapsModule will implemente this lazy loading. It will need to handle his own routing. A new cefa-snaps-routing.module is created\
+All the route will be handle here by RouterModule.forChild(). It cant be handle by RouterModule.forRoot() which is call only once by root\
+The module CefaSnapsModule is lazy load like this (by the routing) :\
+{ path: 'cefasnaps', loadChildren: () => import('./cefa-snaps/cefa-snaps.module').then(m => m.CefaSnapsModule)},\
+The CefaSnapsModule is not load any more by the main module in the import part\
+And the lazy loading is generate a separate bundle javascript for the module\
+\

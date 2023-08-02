@@ -1,14 +1,11 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { CefaSnapListComponent } from "./cefa-snaps/cefa-snap-list/cefa-snap-list.component";
-import { SingleCefaSnapComponent } from "./cefa-snaps/./single-cefa-snap/single-cefa-snap.component";
-import { NewCefaSnapComponent } from "./cefa-snaps/./new-cefa-snap/new-cefa-snap.component";
 import { LandingPageComponent } from "./landing-page/components/landing-page/landing-page.component";
+import { CefaSnapRoutingModule } from "./cefa-snaps/cefa-snap-routing.module";
 
 const routes: Routes = [
-    { path: 'cefasnaps', component: CefaSnapListComponent },
-    { path: 'cefasnaps/:id', component: SingleCefaSnapComponent },
-    { path: 'create', component: NewCefaSnapComponent },
+    // here the routing lady load the module CefaSnapsModule
+    { path: 'cefasnaps', loadChildren: () => import('./cefa-snaps/cefa-snaps.module').then(m => m.CefaSnapsModule) },
     { path: '', component: LandingPageComponent }
 ];
 
@@ -17,7 +14,7 @@ const routes: Routes = [
         RouterModule.forRoot(routes)
     ],
      exports: [
-        RouterModule
+        CefaSnapRoutingModule
      ]
 })
 export class AppRoutingModule {}

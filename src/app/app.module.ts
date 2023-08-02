@@ -15,7 +15,8 @@ import { LandingPageModule } from './landing-page/landing-page.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    CefaSnapsModule,
+    // Don't import here any more, since it is "lazy load" by the routing module
+    // CefaSnapsModule,
     LandingPageModule
   ],
   bootstrap: [AppComponent]

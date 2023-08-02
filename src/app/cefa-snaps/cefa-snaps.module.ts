@@ -6,6 +6,7 @@ import { NewCefaSnapComponent } from './new-cefa-snap/new-cefa-snap.component';
 import { CefaSnapListComponent } from './cefa-snap-list/cefa-snap-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { CefaSnapRoutingModule } from './cefa-snap-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule
+    CefaSnapRoutingModule
   ],
   exports:[
     CefaSnapComponent,
