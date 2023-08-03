@@ -5,6 +5,7 @@ import { CefaSnapRoutingModule } from "./cefa-snaps/cefa-snap-routing.module";
 
 const routes: Routes = [
     // here the routing lady load the module CefaSnapsModule
+    { path: 'auth', loadChildren: () => import('./auth/auth-routing.module').then(m => m.AuthRoutingModule) },
     { path: 'cefasnaps', loadChildren: () => import('./cefa-snaps/cefa-snaps.module').then(m => m.CefaSnapsModule) },
     { path: '', component: LandingPageComponent }
 ];

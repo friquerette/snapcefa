@@ -1,6 +1,6 @@
 <div class="face-snap-card" [ngClass]="{snapped: !addSnap}" *ngIf="cefaSnap$ | async as cefaSnap">
     <h2>{{ cefaSnap.title | uppercase }}</h2>
-    <a routerLink="/cefasnaps">back</a>
+    <a routerLink="/cefasnaps/list">back</a>
     <p>mise en ligne {{ cefaSnap.createdDate | date: 'longDate' }} or {{ cefaSnap.createdDate | date: 'le dd/MM/yyyy à hh:mm' }}</p>
     <img [src]="cefaSnap.imageUrl" [title]="cefaSnap.title">
     <p>{{cefaSnap.description | titlecase }}</p>

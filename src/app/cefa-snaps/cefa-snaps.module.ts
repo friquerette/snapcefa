@@ -13,7 +13,8 @@ import { CefaSnapRoutingModule } from './cefa-snap-routing.module';
     CefaSnapComponent,
     CefaSnapListComponent,
     NewCefaSnapComponent,
-    SingleCefaSnapComponent],
+    SingleCefaSnapComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,

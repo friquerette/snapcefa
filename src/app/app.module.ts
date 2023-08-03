@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module' ;
 import { CefaSnapsModule } from './cefa-snaps/cefa-snaps.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LandingPageModule } from './landing-page/landing-page.module';
     CoreModule,
     // Don't import here any more, since it is "lazy load" by the routing module
     // CefaSnapsModule,
-    LandingPageModule
+    LandingPageModule,
+    AuthModule
   ],
   bootstrap: [AppComponent]
 })

@@ -115,3 +115,8 @@ The module CefaSnapsModule is lazy load like this (by the routing) :\
 The CefaSnapsModule is not load any more by the main module in the import part\
 And the lazy loading is generate a separate bundle javascript for the module\
 \
+Lesson 13\
+Create a new module for Auth with a login component, a new routing module auth and a new route. This module is not lazy loading\
+Update the service which by default don't have any more a token\
+the login component can be created like this "ng g c auth/components/login". It is put directly into the module auth directory and registed\
+\
