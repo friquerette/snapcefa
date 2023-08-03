@@ -10,7 +10,7 @@ export class AuthService {
         return this.token;
     }
 
-    setToken() : void {
+    login() : void {
         this.token = 'MyFakeToken';
     }
 }
