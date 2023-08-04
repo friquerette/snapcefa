@@ -12,7 +12,7 @@ There are several technicals to handle asynchrone in javascript:\
    . function async/await, function which wait until the event appear\
 Angular provide a tool more powerful to handle it with the tools RxJS with its Observables\
 
-lesson 1\
+lesson 1 - rxjs and observable\
    a) use of interval() (an observable import from rxjs) and subscribe with the method subscribe()\
    b) declare the interval$ as observable which emit number and display the result into the template
       use the pipe Async which subscribe to the obsersable and dont format the data.
@@ -56,7 +56,7 @@ Allow the use to do input from the form\
       . onSubmitForm() can receiv emailForm from it in argurment which is send to the method\
       . #emailForm is a reference local to the directive that we dont need to put and which is given to the directive\
 \
-Lesson 6\
+Lesson 6 - Form reactive\
 The form reactive\
 The form reactive is generate by TypeScript\
 For this use the module ReactiveFormsModule.\
@@ -65,13 +65,13 @@ Reactive means Observable\
 use of the Observable "valueChanges()" on the form with the directive "async" in the template and an alias declare with "as"
 ... operateur Spread\
 \
-Lesson 7\
+Lesson 7 - Validator\
 Validator is use with form reactive\
    . at the this.formBuilder.group() add a validator "Validators.required"\
    . add validator by pattern for url with "Validators.pattern(this.urlRegex)"\
    . make the emis number of emit event (less refresh) of this.formBuilder.group by using "updateOn: 'blur'"
 \
-Lesson 8\
+Lesson 8 - HttpClient\
 Use of the HttpClient from "@angular/common/http" with the method this.http.get<CefaSnap[]>('url').\
 Resolv of the return Obersable by the pipe "async" use into the template of the list of CefaSnap\
 . url of the project for the "back server" https://github.com/OpenClassrooms-Student-Center/angular-intermediate-backend\
@@ -83,7 +83,7 @@ Be able refresh the number of snap (like) on the back with this.http.put<CefaSna
 use the side effect method tap() to do the action when the call of the server is finish\
 Be able to create a new recort on the back server with this.http.post<CefaSnap[]>(`url`, newCefaSnap)\
 \
-Lesson 10\
+Lesson 10 - Token in the header\
 Securize the query to the server\
 Use the interceptor to add a token in the header.\
 HttpInterceptor: An interceptor is a class which implement HttpInterceptor with the intercept()\
@@ -92,7 +92,7 @@ The response is send to the client by next.handle(cloneHttpRequest)\
 Here the token is prodived by a TokenService (a mock token here)\
 This interceptor is added to the app Module into the providers part\
 \
-Lesson 11\
+Lesson 11 - Module\
 use of module\
 generate a new module core with the command ng generate module core or ng g m core\
 This module import "CommonModule" common to all module\
@@ -106,7 +106,7 @@ We put inside this module all which is part of the application and which will be
 Create the feature module CefaSnaps, all the component for CefaSnap are moved inside this new module\
 Create a landing page module\
 \
-Lesson 12\
+Lesson 12 - Lazy Loading\
 Lazy loading, routing technical depend on the architecture in module. The module will be loaded when the user will need of it\
 The CefaSnapsModule will implemente this lazy loading. It will need to handle his own routing. A new cefa-snaps-routing.module is created\
 All the route will be handle here by RouterModule.forChild(). It cant be handle by RouterModule.forRoot() which is call only once by root\
@@ -115,8 +115,12 @@ The module CefaSnapsModule is lazy load like this (by the routing) :\
 The CefaSnapsModule is not load any more by the main module in the import part\
 And the lazy loading is generate a separate bundle javascript for the module\
 \
-Lesson 13\
+Lesson 13 - Guard\
 Create a new module for Auth with a login component, a new routing module auth and a new route. This module is not lazy loading\
 Update the service which by default don't have any more a token\
 the login component can be created like this "ng g c auth/components/login". It is put directly into the module auth directory and registed\
+The login refresh authicate the user by calling the auth service\
+A guard is created this is a service @Injectable which implemente CanActivate and his method canActivate\
+the method canActivate return a boolean true if the user is connected or false and this case return the user to the login page here\
+canActivate is added to earch route to protecte wuth an array containing the Class [AuthGuard]}\
 \
